@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+
+<body>
+
+    <!-- mouse -->
+     <div class="cursor"></div>
+     <!-- end mouse -->
+
+<!--Home banner -->
+
+<ul class="media_nav" id="menu">
+<a href="#"><li>Home</li></a>
+<a href="#"><li>About</li></a>
+<a href="#"><li>Skill</li></a>
+<a href="#"><li>Exprience</li></a>
+<a href="#"><li>Contact</li></a>
+</ul>
+
+<div class="Font_home">
+    <header>
+        <div class="header_left">
+        <img src="image/trade-removebg-preview.png" alt="image"> Devloper
+        </div>
+        <nav>
+            <ul>
+               <a href="#"><li>Home</li></a>
+                <a href="#"><li>About</li></a>
+                <a href="#"><li>Skill</li></a>
+                <a href="#"><li>Exprience</li></a>
+                <a href="#"><li>Contact</li></a>
+            </ul>
+            <span class="parent_menu" id="parent" onclick="none()">
+            <i class="fa-solid fa-bars humbergar"></i>
+            </span>
+
+        </nav>
+        <button>Hire Me</button>
+    </header>
+    <div class="home_left">
+      <div class="sub_home_left">
+      <h1>Hello!! <br>Myself <span> Sandip Das</span></h1>
+      <h3><span> Confidence</span> is the real style</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos vero laboriosam beatae? Aut accusantium est molestiae suscipit cum minima, architecto enim quidem obcaecati alias mollitia quos consectetur tempora repellat accusamus . suscipit cum minima, architecto enim quidem obcaecati alias mollitia quos consectetur?</p>
+      <div class="button">
+        <button class="b1">View Projects</button>
+        <button class="b2">Download CV</button>
+      </div>
+    </div>
+    </div>
+    <div class="home_right">
+        <div class="image">
+        <!-- <img src="my.jpg" alt="Sandip das"> -->
+        </div>
+    </div>
+</div>
+
+<!-- end home banner -->
+
+<!-- about design -->
+
+<section class="about_section">
+    <div class="about_main">
+        <div class="about_left_section">
+          <h2>
+            About me
+          </h2>
+          <p>Mr Sandip das dolor sit amet consectetur, adipisicing elit. Tempore maiores pariatur nulla beatae inventore? Totam quibusdam blanditiis repudiandae in dicta rerum animi dignissimos, nihil minima incidunt? Consectetur aperiam blanditiis excepturi? <br><br>
+          Cupiditate sapiente et hic libero pariatur ea iure quidem delectus dolore, natus rem. Placeat, assumenda! Quis, facere. Nostrum veritatis hic ad impedit quo ducimus libero natus quaerat tempora, enim reprehenderit.
+          Ullam repellat porro provident recusandae est beatae laudantium! nobis sit ipsam?
+        </p>
+        <div class="con">Contact</div>
+        <div class="info">
+            <div class="p1"><i class="fa-solid fa-envelope"></i> Sandip.das.06.01.2006@gmail.com</div>
+            <div class="p1"><i class="fa-solid fa-phone"></i> 8293356493</div>
+            <div class="p1"><i class="fa-solid fa-location-dot"></i> mangraj , Argoal , Purbamedinipur</div>
+            <div class="p1"><i class="fa-brands fa-whatsapp"></i> 8293356493</div>
+        </div>
+        </div>
+        <div class="about_right_section">
+            <div class="sub_image">
+            <div class="about_image">
+
+            </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+ <!-- end about design -->
+
+
+</body>
+
+<script>
+
+const cursor = document.querySelector('.cursor');
+
+document.addEventListener('mousemove', e => {
+    cursor.setAttribute("style", "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;")
+})
+
+document.addEventListener('click', () => {
+    cursor.classList.add("expand");
+
+    setTimeout(() => {
+        cursor.classList.remove("expand");
+    }, 500)
+})
+
+</script>
+
+ <script>
+    
+        // Mobile Menu Toggle
+        const hamburger = document.getElementById('hamburger');
+        const menu = document.getElementById('menu');
+        const overlay = document.getElementById('overlay');
+        
+        hamburger.addEventListener('click', function() {
+            menu.classList.toggle('active');
+            overlay.classList.toggle('active');
+            
+            if (menu.classList.contains('active')) {
+                hamburger.innerHTML = '<i class="fas fa-times"></i>';
+                document.body.style.overflow = 'hidden';
+            } else {
+                hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+                document.body.style.overflow = 'auto';
+            }
+        });
+        
+        overlay.addEventListener('click', function() {
+            menu.classList.remove('active');
+            overlay.classList.remove('active');
+            hamburger.innerHTML = '<i class="fas fa-bars"></i>';
+            document.body.style.overflow = 'auto';
+        });
+        
+        // Header Scroll Effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+
+    <script>
+    var c=2;
+    function none(){
+        if(c%2==0){
+document.getElementById('parent').innerHTML='<i class="fa-solid fa-xmark humbergar"></i>';
+document.getElementById('menu').style.display='block';
+c++;
+        }
+        else{
+document.getElementById('parent').innerHTML='<i class="fa-solid fa-bars humbergar"></i>';
+document.getElementById('menu').style.display='none';
+c++;
+        }
+
+    }
+</script>
+
+
+
+</html>
